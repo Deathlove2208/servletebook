@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="layout">
+        <div class="header">
+            <span class="logo"><a href="/">Store</a></span>
+            <span class="feature" id="myBtn" title="New post">
+                &#43;
+            </span>
+             
+        </div>
+        <div class="sidebar">
+            <ul>
+                <li><a href="/">&#127760;</a></li>
+                <li><a href="" title="Users">&#128101;</a></li>
+                <li><a href="" title="Files">&#128221;</a></li>
+            </ul>
+        </div>  
+        <div class="content">
+            <div class="card-group">
+                <img src="" alt="">
+                <div class="card-body">
+                    <p>Title</p>
+                </div>
+                <div class="card-footer">
+                    <p>user</p>
+                    &#10060;
+                </div>
+            </div>
+            <!-- The Modal -->
+            <div id="myModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h3>new book</h3>
+                    <form action="" method="post" class="post-pdf">
+                        
+                        <input type="text" id="title" class="title-input" placeholder="Title for pdf file">
+                        <label for="pdf_uploads" class="pdf-upload">Choose pdf to upload</label>
+                        <input type="file" id="pdf_uploads" name="pdf_uploads" accept=".pdf" style="opacity: 0;">
+                        <label for="image_uploads" class="image-upload">Image</label>
+                        <input type="file" id="image_uploads" name="image_uploads" accept=".jpg" style="opacity: 0;">
+                        <input type="submit" value="Upload" class="btn-submit">
+                    </form>
+                </div>
+            </div> 
+        </div>
+
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
