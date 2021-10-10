@@ -2,7 +2,6 @@
     pageEncoding="ISO-8859-1"
 %>
 <%@ page import="java.util.ArrayList"%>
-<%@ page import="com.mycompany.model.User"%>
     <%-- <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %> --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core_rt" %>
 <!DOCTYPE html>

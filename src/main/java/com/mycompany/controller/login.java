@@ -1,6 +1,7 @@
 package com.mycompany.controller;
 
-import com.mycompany.dao.DAO;
+
+import com.mycompany.dao.UserDAO;
 import com.mycompany.model.User;
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -13,11 +14,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/login")
 public class login extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
        
-
+    private UserDAO userDAO;
     public login() {
         super();
+        this.userDAO = new UserDAO();
     }
 
     @Override
@@ -30,11 +32,10 @@ public class login extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        DAO dao = new DAO();
-        User checkUser = dao.getUser(username);
+        User checkUser = this.userDAO.getUser(username);
         if(checkUser != null){
             if(checkUser.getPword().equals(password)){
-                response.sendRedirect("home");
+                response.sendRedirect("dashboardadmin");
             } else {
                 response.sendRedirect("login");
             }

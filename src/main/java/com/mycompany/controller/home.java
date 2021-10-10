@@ -1,6 +1,6 @@
 package com.mycompany.controller;
 
-import com.mycompany.dao.DAO;
+import com.mycompany.dao.BookDAO;
 import com.mycompany.model.Book;
 import java.io.IOException;
 import java.util.List;
@@ -19,23 +19,28 @@ import javax.servlet.http.HttpServletResponse;
 public class home extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-
+        
+    private List<Book> books;
+    private final BookDAO bookDAO;
     public home() {
     	super();
+        this.bookDAO = new BookDAO();
+        
     }
 
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        DAO dao = new DAO();
-//        List<Book> books = dao.getAllBook();
-//        request.setAttribute("books", books);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        this.books = this.bookDAO.getBooks();
+        request.setAttribute("books", this.books);
         RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");  
         rd.forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
 
     }
 }
