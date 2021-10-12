@@ -22,7 +22,8 @@ public class HibernateUtil {
 	Properties settings = new Properties();
         settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
 	settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-	settings.put(Environment.URL, "jdbc:mysql://35.240.154.38:3306/ebook");
+//	settings.put(Environment.URL, "jdbc:mysql://35.240.154.38:3306/ebook");
+        settings.put(Environment.URL, "jdbc:mysql://google/ebook?cloudSqlInstance=caramel-duality-327415:asia-southeast1:clouddb&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=ebook&password=113114115");
 	settings.put(Environment.USER, "ebook");
         settings.put(Environment.PASS, "113114115");
 	settings.put(Environment.SHOW_SQL, "true");
