@@ -22,9 +22,9 @@ public class HibernateUtil {
 	Properties settings = new Properties();
         settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
 	settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-	settings.put(Environment.URL, "jdbc:mysql://localhost:3306/ebook");
-	settings.put(Environment.USER, "sang");
-        settings.put(Environment.PASS, "amsang2403");
+	settings.put(Environment.URL, "jdbc:mysql://35.240.154.38:3306/ebook");
+	settings.put(Environment.USER, "ebook");
+        settings.put(Environment.PASS, "113114115");
 	settings.put(Environment.SHOW_SQL, "true");
 	configuration.setProperties(settings);
 	configuration.addAnnotatedClass(User.class);
