@@ -20,6 +20,7 @@ public class User implements Serializable {
 	private String username;
 	private String pword;
 	private String avatar;
+        private String role;
         
         
 	public User() {
@@ -83,6 +84,14 @@ public class User implements Serializable {
 
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
+	}
+        
+        public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.avatar = role;
 	}
 
 

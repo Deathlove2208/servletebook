@@ -17,21 +17,22 @@ public class Book implements Serializable {
         @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
-	private String link;
-	private String thumbnail;
+	private String img;
 	private int views;
-
+        private String author;
+        private String detail;
 
 	public Book() {
 		
 	}
-	public Book(int id, String title, String link, String thumbnail, int views) {
+	public Book(int id, String title, String img, int views, String author, String detail) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.link = link;
-		this.thumbnail = thumbnail;
+		this.img = img;
 		this.views = views;
+                this.author = author;
+                this.detail = detail;
 	}
 
 
@@ -54,27 +55,6 @@ public class Book implements Serializable {
 		this.title = title;
 	}
 
-
-	public String getLink() {
-		return link;
-	}
-
-
-	public void setLink(String link) {
-		this.link = link;
-	}
-
-
-	public String getThumbnail() {
-		return thumbnail;
-	}
-
-
-	public void setThumbnail(String thumbnail) {
-		this.thumbnail = thumbnail;
-	}
-
-
 	public int getViews() {
 		return views;
 	}
@@ -83,5 +63,28 @@ public class Book implements Serializable {
 	public void setViews(int views) {
 		this.views = views;
 	}
+        
+        public String getAuthor() {
+            return author;
+        }
+
+        public void setAuthor(String author) {
+            this.author = author;
+        }
 	
+        public void setImg(String img) {
+            this.img = img;
+        }
+
+        public void setDetail(String detail) {
+            this.detail = detail;
+        }
+
+        public String getImg() {
+            return img;
+        }
+
+        public String getDetail() {
+            return detail;
+        }
 }

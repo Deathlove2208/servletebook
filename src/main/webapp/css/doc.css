@@ -1,0 +1,31 @@
+@charset "ISO-8859-1";
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+html {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+artical {
+    display: block;
+    width: 50vw;
+    padding: 8px;
+    margin: 0 auto;
+}
+artical p {
+    font-size: 1.2rem;
+    text-align: justify;
+    line-height: 1.6;
+    margin-top: 24px;
+}
+@media screen and (max-width: 500px) {
+	
+}
