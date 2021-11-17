@@ -53,7 +53,6 @@ a:active {
 	top: 0;
 	right: 0;
 	left: 0;
-	overflow: hidden;
 	grid-area: header;
 	background-color: #fff;
 	padding: 16px 10px;
@@ -135,6 +134,7 @@ a:active {
 	flex-direction: column;
 	align-items: center;
 	width: 352px;
+	max-height: 432px;
 	margin: 0 8px;
 	border-radius: 4px;
 	overflow: hidden;
@@ -148,7 +148,7 @@ a:active {
 }
 
 .card-body {
-	height: 25%;
+	height: 30%;
 	width: 100%;
 	margin: 8px 0;
 	overflow: hidden;
@@ -218,6 +218,56 @@ a:active {
 	cursor: pointer;
 	margin: 0 4px;
 }
+
+
+
+ /* Dropdown Button */
+.dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;} 
+
 
 @media screen and (max-width: 500px) {
 	.header a {

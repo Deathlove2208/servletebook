@@ -13,21 +13,22 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mycompany.model.User;
 
-@WebFilter(filterName = "login", urlPatterns = {"/login"})
-public class login implements Filter {
+@WebFilter(filterName = "profile", urlPatterns = {"/profile"})
+public class profile implements Filter {
 
-    public login() {
-     
+    public profile() {
+        
     }
 
 	public void destroy() {
+		
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
         HttpServletResponse resp = (HttpServletResponse) response;
         User user = (User) req.getSession().getAttribute("userInfo");
-        if(user == null) chain.doFilter(request, response);
+        if(user != null) chain.doFilter(request, response);
         else resp.sendRedirect("home");
 	}
 

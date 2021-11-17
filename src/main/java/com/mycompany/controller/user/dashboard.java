@@ -1,7 +1,9 @@
-package com.mycompany.controller.admin;
+package com.mycompany.controller.user;
 
 import com.mycompany.dao.BookDAO;
 import com.mycompany.model.Book;
+import com.mycompany.model.User;
+
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
@@ -13,39 +15,30 @@ import javax.servlet.http.HttpServletResponse;
 
 
 
-@WebServlet(name = "admin", urlPatterns = {"/admin"})
-public class admin extends HttpServlet {
+@WebServlet(name = "dashboard", urlPatterns = {"/dashboard"})
+public class dashboard extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
     private List<Book> books;
     private BookDAO bookDAO;
-    public admin() {
+    public dashboard() {
         super();
         this.bookDAO = new BookDAO();
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        this.books = this.bookDAO.getBooks("");
+        User user = (User) request.getSession().getAttribute("userInfo");
+    	this.books = this.bookDAO.getBooksByAuthor(user.getUsername());
         request.setAttribute("books", this.books);
-        RequestDispatcher rd = request.getRequestDispatcher("admin.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("dashboard.jsp");
         rd.forward(request, response);
     }
     
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String title = request.getParameter("title");
-        String img = request.getParameter("img");
-        String detail = request.getParameter("detail");
-        Book book = new Book();
-        book.setTitle(title);
-        book.setImg(img);
-        book.setDetail(detail);
-        boolean inserted = this.bookDAO.insertBook(book);
-        if(inserted) {
-            response.sendRedirect("admin");
-        }
+        
         
     }
 

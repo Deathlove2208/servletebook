@@ -16,7 +16,7 @@ a{
 
 artical {
     display: block;
-    width: 50vw;
+    width: 40vw;
     padding: 8px;
     margin: 0 auto;
 }
@@ -25,6 +25,15 @@ artical p {
     text-align: justify;
     line-height: 1.6;
     margin-top: 24px;
+}
+
+.card-img-top {
+	width: 100%;
+	object-fit: cover;
+}
+artical img {
+    width: 100%;
+	object-fit: cover;
 }
 @media screen and (max-width: 500px) {
 	

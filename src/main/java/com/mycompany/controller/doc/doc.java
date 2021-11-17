@@ -26,6 +26,7 @@ public class doc extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("q"));
         
         this.book = this.bookDAO.getBookById(id);
+        this.bookDAO.setViewOfBook(id);
         request.setAttribute("book", book);
         RequestDispatcher rd = request.getRequestDispatcher("docScreen.jsp");
         rd.forward(request, response);

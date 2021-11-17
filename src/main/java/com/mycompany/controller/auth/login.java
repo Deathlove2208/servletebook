@@ -37,11 +37,13 @@ public class login extends HttpServlet {
         if(user != null) {
             HttpSession session = request.getSession();  
             session.setAttribute("userInfo",user);  
-            RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
-            rd.forward(request, response);
+            response.sendRedirect("home");
+            
         } else {
             response.sendRedirect("login");
         }
+        
+
     }
 
 }

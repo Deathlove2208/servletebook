@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet"> 
-    <title>Home</title>
+    <title>trang chủ</title>
 </head>
 <body class="grid-layout">
     <div class="header">
@@ -21,20 +21,21 @@
           <input class="search-input" type="search" placeholder="tìm kiếm..." name="b" />
           <button class="btn" type="submit">tìm kiếm</button>
         </form>
-        
         <span class="header-right">
             <c:choose>
                 <c:when test="${sessionScope.userInfo == null}"> 
-                  <a href="login">login</a>
+                  <a href="login">&#128100;</a>
                 </c:when>
                 <c:otherwise>
-                    <a href="">${sessionScope.userInfo.getFullname()}</a>
-                    <a href="logout">logout</a>
+                    <div class="dropdown">
+					  <button onclick="myFunction()" class="dropbtn">${sessionScope.userInfo.getFullname()} &#128100;</button>
+					  <div id="myDropdown" class="dropdown-content">
+					    <a href="dashboard">quản lý</a>
+					    <a href="logout">đăng xuất</a>
+					  </div>
+					</div>
                 </c:otherwise>
             </c:choose>
-            <c:if test="${sessionScope.userInfo.getRole() == 'admin'}"> 
-                  <a href="admin">dashboard</a>
-            </c:if>
           
         </span>
       </div>
@@ -44,7 +45,7 @@
       <div class="sidebar bg">
         <ul class="nav-sidebar">
           <li class="nav-sidebar-item"><a href="home">trang chủ</a></li>
-          <li class="nav-sidebar-item"><a href="home?b=isNew">mới nhất </a></li>
+          <li class="nav-sidebar-item"><a href="home?b=new">mới nhất </a></li>
           <li class="nav-sidebar-item"><a href="home?b=trending">thịnh hành </a></li>
           <li class="nav-sidebar-item"><a href="home?b=best">hay nhất</a></li>
         </ul>
@@ -61,7 +62,8 @@
                     </a>
                     <div class="card-body">
                         <a href="doc?q=${book.getId()}"><h3 class="card-title">${book.getTitle()}</h3></a>
-                        <p class="card-des"> &#128065; ${book.getViews()}</p>
+                        <p class="card-des">${book.getDetail()}</p>
+                        <span>${book.getViews()} &#128064; ${book.getCreated_at()}</span>
                     </div>
                     <div class="card-footer">
                         <div class="user">
@@ -74,6 +76,6 @@
           </c:forEach>
              
       </main>
-      
+     <script src="js/home.js"></script>
 </body>
 </html>

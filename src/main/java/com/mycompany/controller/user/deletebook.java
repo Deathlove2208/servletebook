@@ -1,4 +1,4 @@
-package com.mycompany.controller.admin;
+package com.mycompany.controller.user;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.mycompany.dao.BookDAO;
 
-@WebServlet(name = "deletebook", urlPatterns = {"/admin/delete"})
+@WebServlet(name = "deletebook", urlPatterns = {"/book/delete"})
 public class deletebook extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -22,7 +22,7 @@ public class deletebook extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("b"));
 		boolean res = this.bookDAO.deleteBook(id);
-		if(res) response.sendRedirect("/ebook/admin");
+		if(res) response.sendRedirect("/ebook/dashboard");
 		
 	}
 
