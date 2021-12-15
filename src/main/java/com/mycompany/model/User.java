@@ -14,13 +14,13 @@ import javax.persistence.Table;
 @Table(name="users")
 public class User implements Serializable {
 	@Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
-        private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 	private String fullname;
 	private String username;
 	private String pword;
 	private String avatar;
-        private String role;
+    private String role;
         
         
 	public User() {

@@ -24,19 +24,19 @@ import org.hibernate.annotations.UpdateTimestamp;
 @Table(name="books")
 public class Book implements Serializable {
 	@Id
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String title;
 	private String img;
 	private int views;
-        private String author;
-        private String detail;
-        @CreationTimestamp
-        @Temporal(TemporalType.TIMESTAMP)
-        private Date created_at;
-        @UpdateTimestamp
-        @Temporal(TemporalType.TIMESTAMP)
-        private Date updated_at;
+    private String author;
+    private String detail;
+    @CreationTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date created_at;
+    @UpdateTimestamp
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date updated_at;
 
 
 	public String getCreated_at() {
@@ -62,8 +62,8 @@ public class Book implements Serializable {
 		this.title = title;
 		this.img = img;
 		this.views = views;
-                this.author = author;
-                this.detail = detail;
+        this.author = author;
+        this.detail = detail;
 	}
 
 
@@ -95,27 +95,27 @@ public class Book implements Serializable {
 		this.views = views;
 	}
         
-        public String getAuthor() {
-            return author;
-        }
+    public String getAuthor() {
+        return author;
+    }
 
-        public void setAuthor(String author) {
-            this.author = author;
-        }
-	
-        public void setImg(String img) {
-            this.img = img;
-        }
+    public void setAuthor(String author) {
+        this.author = author;
+    }
 
-        public void setDetail(String detail) {
-            this.detail = detail;
-        }
+    public void setImg(String img) {
+        this.img = img;
+    }
 
-        public String getImg() {
-            return img;
-        }
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
 
-        public String getDetail() {
-            return detail;
-        }
+    public String getImg() {
+        return img;
+    }
+
+    public String getDetail() {
+        return detail;
+    }
 }

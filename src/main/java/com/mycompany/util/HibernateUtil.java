@@ -19,17 +19,15 @@ public class HibernateUtil {
 
     static {
         Configuration configuration = new Configuration();
-	Properties settings = new Properties();
+        Properties settings = new Properties();
         settings.put(Environment.DIALECT, "org.hibernate.dialect.MySQLDialect");
-	settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+        settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
         settings.put(Environment.URL, "jdbc:mysql://127.0.0.1:3306/ebook");
-//	settings.put(Environment.URL, "jdbc:mysql://35.240.154.38:3306/ebook");
-//        settings.put(Environment.URL, "jdbc:mysql://google/ebook?cloudSqlInstance=caramel-duality-327415:asia-southeast1:clouddb&socketFactory=com.google.cloud.sql.mysql.SocketFactory&user=ebook&password=113114115");
-	settings.put(Environment.USER, "sang");
-        settings.put(Environment.PASS, "amsang2403");
-	settings.put(Environment.SHOW_SQL, "true");
-	configuration.setProperties(settings);
-	configuration.addAnnotatedClass(User.class);
+        settings.put(Environment.USER, "sang");
+        settings.put(Environment.PASS, "msang2403");
+        settings.put(Environment.SHOW_SQL, "true");
+        configuration.setProperties(settings);
+        configuration.addAnnotatedClass(User.class);
         configuration.addAnnotatedClass(Book.class);
 
 	ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
