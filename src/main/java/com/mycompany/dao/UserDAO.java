@@ -39,6 +39,7 @@ public class UserDAO {
         }
         return null;
     }
+
     public User getUserByUsername(String username){
         Session session = HibernateUtil.getSessionFactory().openSession();
         User user = null;
@@ -75,6 +76,7 @@ public class UserDAO {
         }
         return false;
     }
+
     public boolean deleteUser(int id){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
@@ -92,6 +94,7 @@ public class UserDAO {
         }  
         return false;
     }
+    
     public User login(String username, String pw) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         User user = null;
