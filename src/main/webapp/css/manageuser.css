@@ -132,9 +132,7 @@ a{
     box-shadow: .2px .2px 3px .2px rgb(214, 214, 214);
 }
 
-.box-row{
-    gap:20px;
-}
+.box-row{gap:20px;}
 
 img{
     padding:0px 2px 2px 22px;
