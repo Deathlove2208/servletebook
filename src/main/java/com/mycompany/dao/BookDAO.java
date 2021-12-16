@@ -46,6 +46,7 @@ public class BookDAO {
         }
         return null;
     }
+    
     public Book getBookById(int id){
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -61,6 +62,7 @@ public class BookDAO {
         }
         return null;
     }
+
     public List<Book> getBooksByAuthor(String author){
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -76,6 +78,7 @@ public class BookDAO {
         }
         return null;
     }
+
     public List<Book> getAllBooks(){
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
@@ -90,6 +93,7 @@ public class BookDAO {
         }
         return null;
     }
+
     public int setViewOfBook(int id){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
@@ -142,6 +146,7 @@ public class BookDAO {
         }  
         return false;
     }
+
     public boolean updateBook(Book book){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
