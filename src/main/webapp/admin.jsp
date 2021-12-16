@@ -4,8 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-         <link rel="stylesheet" href="./css/admin.css">
-        
+        <link rel="stylesheet" href="./css/admin.css">
         <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -45,8 +44,7 @@
 	                <input placeholder="SEARCH" type='search'>
 	                <ion-icon class='search-icon' name="search-outline"></ion-icon>
 	            </div>
-	            
-	            
+	            	            
 	            <h2>List Books</h2>
 				<br>
 				<div class='box-container'>
@@ -67,8 +65,7 @@
 						</div>
 					</c:forEach>
 				</div> 
-				
-				    
+								    
 	            <h2>List Users</h2>
 	            <br>
 		        <div class="box-container">
