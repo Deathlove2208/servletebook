@@ -225,24 +225,16 @@ input::placeholder{
   padding: 1em;
 }
 
-.id-cell {
-  width: 5%;
-}
-.fullname-cell {
-  width: 25%;
-}
-.username-cell {
-  width: 25%;
-}
-.password-cell {
-  width: 10%;
-}
-.avatar-cell {
-  width: 15%;
-}
-.role-cell {
-  width: 10%;
-}
-.action-cell {
-  width: 10%;
-}
+.id-cell {width: 5%;}
+
+.fullname-cell {width: 25%;}
+
+.username-cell {width: 25%;}
+
+.password-cell {width: 10%;}
+
+.avatar-cell { width: 15%;}
+
+.role-cell {width: 10%;}
+
+.action-cell {width: 10%;}
