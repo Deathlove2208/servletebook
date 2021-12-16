@@ -76,6 +76,20 @@ public class BookDAO {
         }
         return null;
     }
+    public List<Book> getAllBooks(){
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        try {
+            Query q = session.createQuery("FROM Book b");
+            List<Book> books = q.getResultList();
+            return books;
+
+        } catch (Exception e) {
+            System.out.println(e);
+        } finally{
+            session.close();
+        }
+        return null;
+    }
     public int setViewOfBook(int id){
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
