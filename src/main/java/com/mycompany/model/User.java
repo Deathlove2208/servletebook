@@ -26,11 +26,11 @@ public class User implements Serializable {
 	public User() {
             super();
 	}
-        public User(String fullname, String username, String pword) {
-            this.fullname = fullname;
-            this.username = username;
-            this.pword = pword;
-        }
+    public User(String fullname, String username, String pword) {
+        this.fullname = fullname;
+        this.username = username;
+        this.pword = pword;
+    }
 
 	public void setId(int id) {
 		this.id = id;
@@ -44,49 +44,35 @@ public class User implements Serializable {
 		return fullname;
 	}
 
-
-
 	public void setFullname(String fullname) {
 		this.fullname = fullname;
 	}
-
-
 
 	public String getUsername() {
 		return username;
 	}
 
-
-
 	public void setUsername(String username) {
 		this.username = username;
 	}
-
-
 
 	public String getPword() {
 		return pword;
 	}
 
-
-
 	public void setPword(String pword) {
 		this.pword = pword;
 	}
-
-
 
 	public String getAvatar() {
 		return avatar;
 	}
 
-
-
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
         
-        public String getRole() {
+    public String getRole() {
 		return role;
 	}
 
